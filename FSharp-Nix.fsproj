@@ -7,9 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-<Compile Include="input1.fs" />
-<Compile Include="logic1.fs" />
-<Compile Include="main.fs" />
+    <Compile Include="input1.fs" />
+    <Compile Include="logic1.fs" />
+    <Compile Include="main.fs" />
   </ItemGroup>
+
+  <Target Name="MyPreCompileTarget" BeforeTargets="Build">
+    <Exec Command="dotnet fantomas *.fs"/>
+  </Target>
 
 </Project>
