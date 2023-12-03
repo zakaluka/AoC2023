@@ -9,8 +9,10 @@
   <ItemGroup>
     <Compile Include="input1.fs" />
     <Compile Include="logic1.fs" />
+    <Compile Include="input2.fs" />
+    <Compile Include="logic2.fs" />
     <Compile Include="main.fs" />
-  </ItemGroup>
+      </ItemGroup>
 
   <Target Name="MyPreCompileTarget" BeforeTargets="Build">
     <Exec Command="dotnet fantomas *.fs"/>

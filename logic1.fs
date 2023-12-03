@@ -44,11 +44,11 @@ let problemb () =
 
     let first =
       Seq.tryFind (fun c -> List.contains c [ '0'; '1'; '2'; '3'; '4'; '5'; '6'; '7'; '8'; '9' ]) line
-      |> fun x -> if Option.isSome x then x.Value |> string |> int else -1
+      |> fun x -> if Option.isSome x then x.Value |> string |> int else 99999
 
     let firstIndex =
       Seq.tryFindIndex (fun c -> List.contains c [ '0'; '1'; '2'; '3'; '4'; '5'; '6'; '7'; '8'; '9' ]) line
-      |> Option.defaultValue -1
+      |> Option.defaultValue 99999
 
 
     printfn "cc: %A" (first, firstIndex)
