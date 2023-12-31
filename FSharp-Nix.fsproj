@@ -11,6 +11,8 @@
     <Compile Include="logic1.fs" />
     <Compile Include="input2.fs" />
     <Compile Include="logic2.fs" />
+    <Compile Include="input3.fs" />
+    <Compile Include="logic3.fs" />
     <Compile Include="main.fs" />
       </ItemGroup>
 

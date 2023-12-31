@@ -72,6 +72,12 @@ let problema (input: string) (limit: Game2aLimit) =
     && g.MaxBlue <= limit.MaxBlue)
   |> List.fold (fun acc e -> acc + e.Id) 0
 
+// Logic2.problemb
+//   Input2.inputa2
+//   { MaxRed = 12
+//     MaxGreen = 13
+//     MaxBlue = 14 }
+// |> printfn "%d"
 let problemb (input: string) (limit: Game2aLimit) =
   let games =
     input.Split [| '\n' |] |> Array.filter (fun l -> String.IsNullOrEmpty(l) |> not)
