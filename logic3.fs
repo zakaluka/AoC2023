@@ -12,12 +12,12 @@ let tee f x =
 // Some notes:
 // For a 2D array, length1 is the number of rows
 // length2 is the number of columns
-let problem3a =
+let problem3a (arr:char array2d) =
   let isSymbol c =
     '.' :: [ '0' .. '9' ] |> List.contains c |> not
 
   let checkAround (arr:char array2d) (r, c) =
-    let hasSymbolAbove arr (r, c) =
+    let hasSymbolAbove (arr:char array2d) (r, c) =
       if r = 0 then
         false
       else
@@ -32,16 +32,16 @@ let problem3a =
 
         tl || above || tr
 
-    let hasSymbolLeft arr (r, c) =
+    let hasSymbolLeft (arr:char array2d) (r, c) =
       if c = 0 then false else arr[r, c - 1] |> isSymbol
 
-    let hasSymbolRight arr (r, c) =
+    let hasSymbolRight (arr:char array2d) (r, c) =
       if c = (Array2D.length2 arr - 1) then
         false
       else
         arr[r, c + 1] |> isSymbol
 
-    let hasSymbolBelow arr (r, c) =
+    let hasSymbolBelow (arr:char array2d) (r, c) =
       if r = (Array2D.length1 arr - 1) then
         false
       else
@@ -54,7 +54,7 @@ let problem3a =
           else
             arr[r + 1, c + 1] |> isSymbol
 
-        bl || above || br
+        bl || below || br
 
     (hasSymbolAbove arr (r, c))
     || (hasSymbolBelow arr (r, c))

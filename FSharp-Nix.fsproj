@@ -15,9 +15,5 @@
     <Compile Include="logic3.fs" />
     <Compile Include="main.fs" />
       </ItemGroup>
-
-  <Target Name="MyPreCompileTarget" BeforeTargets="Build">
-    <Exec Command="dotnet fantomas *.fs"/>
-  </Target>
-
+  
 </Project>
