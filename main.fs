@@ -1,8 +1,5 @@
-open System
-open Input2
-
 [<EntryPoint>]
 let main argv =
-  failwith "Not implemented"
+  Logic3.problem3a (Input3.input3a Input3.input3a1Raw)
 
   0 // return an integer exit code

@@ -1,23 +1,22 @@
 module Logic3
 
-open System
-open Input3
+open Utility
 open FSharp.Collections
-open System
-
-let tee f x =
-  f x
-  x
 
 // Some notes:
 // For a 2D array, length1 is the number of rows
 // length2 is the number of columns
-let problem3a (arr:char array2d) =
+let problem3a (arr: char array2d) =
+  let isNumber c = [ '0' .. '9' ] |> List.contains c
+
   let isSymbol c =
     '.' :: [ '0' .. '9' ] |> List.contains c |> not
 
-  let checkAround (arr:char array2d) (r, c) =
-    let hasSymbolAbove (arr:char array2d) (r, c) =
+  let findNumbers (arr:char array2d) =
+    let mutable 
+
+  let hasSymbolAround (arr: char array2d) (r, c) =
+    let hasSymbolAbove (arr: char array2d) (r, c) =
       if r = 0 then
         false
       else
@@ -32,16 +31,16 @@ let problem3a (arr:char array2d) =
 
         tl || above || tr
 
-    let hasSymbolLeft (arr:char array2d) (r, c) =
+    let hasSymbolLeft (arr: char array2d) (r, c) =
       if c = 0 then false else arr[r, c - 1] |> isSymbol
 
-    let hasSymbolRight (arr:char array2d) (r, c) =
+    let hasSymbolRight (arr: char array2d) (r, c) =
       if c = (Array2D.length2 arr - 1) then
         false
       else
         arr[r, c + 1] |> isSymbol
 
-    let hasSymbolBelow (arr:char array2d) (r, c) =
+    let hasSymbolBelow (arr: char array2d) (r, c) =
       if r = (Array2D.length1 arr - 1) then
         false
       else
@@ -61,4 +60,7 @@ let problem3a (arr:char array2d) =
     || (hasSymbolLeft arr (r, c))
     || (hasSymbolRight arr (r, c))
 
-  failwith "Not implemented"
+  printfn "(0,0) %A" (hasSymbolAround arr (0, 0))
+  printfn "(0,1) %A" (hasSymbolAround arr (0, 1))
+  printfn "(0,2) %A" (hasSymbolAround arr (0, 2))
+  printfn "(0,3) %A" (hasSymbolAround arr (0, 3))
